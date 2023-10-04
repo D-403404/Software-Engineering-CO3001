@@ -43,9 +43,10 @@ public:
 class SchoolBusinessTest {
 public:
     void main() {
-        Student** stu_arr = new Student*[5];
+        Student* stu_arr[5];
         for(int i = 0; i < 5; i++) {
-            Student* stu = new Student("stu_" + to_string(i+1), "addr_" + to_string(i+1), "CSE", 2023, i*5+20);
+            stu_arr[i] = new Student("stu_" + to_string(i+1), "addr_" + to_string(i+1), "CSE", 2023, 10.5);
+            stu_arr[i]->setYear(2023);
         }
         for(int i = 0; i < 5; i++) {
             cout << stu_arr[i]->toString() << '\n';
